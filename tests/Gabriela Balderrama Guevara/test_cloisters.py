@@ -4,7 +4,7 @@ def test_1():
     url = 'https://www.metmuseum.org/es/plan-your-visit/met-cloisters'
     response = requests.get(url)
     assert response.status_code ==200
--¿
+
 def test_2():
     url = 'https://www.metmuseum.org/es/plan-your-visit'
     response = requests.get(url)

@@ -1,7 +1,6 @@
 import requests
 import pytest
 
-def postman_get2():
     url = "https://www.metmuseum.org/articles/here-i-sette-my-thynge-to-sprynge"
 
     payload = {}

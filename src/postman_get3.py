@@ -1,7 +1,6 @@
 import requests
 import pytest
 
-def postman_get3():
     url = "https://www.metmuseum.org/events/programs/met-speaks/ethics-culture-memoirs-bridging-race-divide"
 
     payload = {}

@@ -1,7 +1,6 @@
 import requests
 import pytest
 
-def postman_get1():
     url = "https://www.metmuseum.org/art/online-features/metcollects/man-ray-electricite"
 
     payload = {}

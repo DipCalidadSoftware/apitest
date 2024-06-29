@@ -1,0 +1,23 @@
+{
+        "type": "object",
+        "properties": {
+            "token_type": {
+                "type": "string"
+            },
+            "iat": {
+                "type": "integer"
+            },
+            "expires_in": {
+                "type": "integer"
+            },
+            "jwt_token": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "token_type",
+            "iat",
+            "expires_in",
+            "jwt_token"
+        ]
+}

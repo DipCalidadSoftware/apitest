@@ -1,6 +1,8 @@
 import json
 import pytest
 import requests
+
+from assertions.login_assertions import assert_login_succesfuly, assert_login_schema, assert_login_schema_file
 from config import BASE_URI
 import jsonschema
 
@@ -57,3 +59,19 @@ def test_login_credenciales_erroneas():
     response_data = response.json()
     assert response.status_code == 400
     assert response_data["error"] == "INVALID_CREDENTIALS"
+
+
+@pytest.mark.smoke
+def test_login_exitoso_credenciales_validos_mejorado(get_token_login):
+    response_data = get_token_login
+    assert assert_login_schema(response_data) == True
+    assert_login_succesfuly(response_data)
+
+
+
+
+@pytest.mark.smoke
+def test_login_exitoso_credenciales_validos_mejoradisimo(get_token_login):
+    response_data = get_token_login
+    assert assert_login_schema_file(response_data) == True
+    assert_login_succesfuly(response_data)

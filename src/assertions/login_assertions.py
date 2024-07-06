@@ -1,7 +1,7 @@
 import jsonschema
 import pytest
 
-from utils.load_resources import load_schema_resource
+from src.utils.load_resources import load_schema_resource
 
 
 def assert_login_succesfuly(response):

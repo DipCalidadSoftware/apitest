@@ -54,7 +54,7 @@ def test_login_exitoso_credenciales_validos(get_token_login):
 
 
 @pytest.mark.smoke1
-@pytest.mark.xfail(reason="known parser issue", run=False)
+@pytest.mark.xfail(reason="known parser issue Id G56", run=False)
 def test_login_credenciales_erroneas():
     url = f'{BASE_URI}/wp-json/api/v1/token'
     headers = {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -77,6 +77,7 @@ def test_login_exitoso_credenciales_validos_mejorado(get_token_login):
 @pytest.mark.smoke1
 def test_login_exitoso_credenciales_validos_mejoradisimo(get_token_login):
     response_data = get_token_login
-    logger.debug("Sfsfsdfsfd")
+    print("Sfsfsdfsfd")
+    logger.debug("soy tu logger")
     assert assert_login_schema_file(response_data) == True
     assert_login_succesfuly(response_data)

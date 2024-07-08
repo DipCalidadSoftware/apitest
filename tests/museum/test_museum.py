@@ -1,7 +1,7 @@
 import pytest
 import requests
 
-
+@pytest.mark.museo
 def test_get():
     url = "https://www.metmuseum.org/art/collection/search?q=egipt&_rsc=ikp8v"
     response = requests.get(url)

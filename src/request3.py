@@ -1,0 +1,25 @@
+import requests
+
+url = "https://store.metmuseum.org/clothing-accessories/scarves-wraps"
+
+payload = {}
+headers = {
+  'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+  'accept-language': 'es-ES,es;q=0.9',
+  'cookie': 'visid_incap_1662004=f19LzyYdRtS5CyqUs/dQsf7HcGYAAAAAQUIPAAAAAAAmtjTxk4z3aC6HUT+tYpOm; incap_ses_1616_1662004=TEXpSjD+tj5c2iZyhy9tFv7HcGYAAAAAYc/0/tEhRQHHZXuCVwZvXQ==; _gcl_au=1.1.198007673.1718668089; _gid=GA1.2.944337709.1718668090; _tt_enable_cookie=1; _ttp=Dcep1BC4SVzuLQva9mwpxtJgj64; __qca=P0-538999123-1718668090034; _parsely_session={%22sid%22:1%2C%22surl%22:%22https://www.metmuseum.org/es%22%2C%22sref%22:%22%22%2C%22sts%22:1718668090895%2C%22slts%22:0}; _parsely_visitor={%22id%22:%22pid=9bfad46a-8848-4765-898d-d88db2f79b01%22%2C%22session_count%22:1%2C%22last_session_ts%22:1718668090895}; QuantumMetricSessionID=bf17ced484b33924484472556c60ff7a; QuantumMetricUserID=6d22dce3697c8137312a385f289edd03; aceSession=1vf69qTUtF3E5dTtrHZdrjFfLNHrgEXmhzmqL5SO+LosfwyuzHp5QNAFaOcWU55MKNkbuQ4QXWC1FKXI6IXxrLcFr9uhZnfFss7NJHxmxfsFRdGw793EmqhAAP4dfMdI/9Av4r2jFPX/sl0HHMWaF92K4OwnNDCMKZsoku/sVW6wkKve/04SFWaAE5N3raF4; nlbi_2349797=FO5CL27OBCeik0SnzMiLaQAAAABTIm//RYAtiKkluJ51JiSf; visid_incap_2349797=LhixJzVxTuetMBBVHie8mPbMcGYAAAAAQUIPAAAAAAB5xZezacLJ5qmPuMLJ6wqg; incap_ses_1616_2349797=fGQSWXMsc3B3TSxyhy9tFvfMcGYAAAAAMTLAsNNejnM6oN2IIC7lgA==; incap_ses_1254_1661922=uKmAQdcIdjoCQjIgcBpnEfjMcGYAAAAAuJ5Hb9LN8ZlOVau2+S146A==; visid_incap_1661922=NOyAPd2ySNm6X6k3uPhoLfjMcGYAAAAAQUIPAAAAAABcPUuwPLLBbicIYNrbG9Du; incap_ses_788_1661922=uWipDXIp4QlhAGmB6onvCvjMcGYAAAAAm3KlrDJwGewg0irt3t6ogA==; nlbi_2349797_2147483392=CvdcEouIxWlVgUeizMiLaQAAAACIqbBvZFvMZ8i71yaTvD6N; _ga_L6ZCHWX6DZ=GS1.1.1718668539.1.1.1718668554.0.0.0; _ga_80QRY9FZ67=GS1.1.1718668539.1.1.1718668554.0.0.0; incap_ses_1453_1661922=6ekFNBmTI2iffSng3xcqFDXPcGYAAAAA/vVGZ44rDppnbodniSDIhw==; incap_ses_298_1661922=8/gQVhZLUXvdD6rKgLUiBDXPcGYAAAAAE4j1/xJz/UiIEJUWhZQViQ==; incap_ses_1698_1661922=Bj2hTqni0Aibq0eSE4KQFzXPcGYAAAAAiAcR2OHLLV+kKN7U2Sz1/Q==; incap_ses_1696_1661922=VlKRZE25Oj0i7R5JFmeJFzXPcGYAAAAAZ/hHFRK+WaUPZ1y6BmeQ6A==; incap_ses_1476_1661922=zRLzVY1Rozxp4xWwQM57FDbPcGYAAAAAuiznli6pyroZ0j64n1WakQ==; visid_incap_1661977=mpicQwhGSZuO0yVTFty/4l/PcGYAAAAAQUIPAAAAAAAUAH70i0ybtASegbOrIeDI; incap_ses_1616_1661977=blD1e9JYLnBG1C5yhy9tFl/PcGYAAAAAVAbwd1t5KN04BlzTbHmXKQ==; PHPSESSID=99c253d339ecc22545a760213f6a7898; klv_mage={"expire_sections":{"customerData":1718670098}}; _ga_Y0W8DGNBTB=GS1.1.1718668089.1.1.1718669500.0.0.0; _gat_UA-1266565-7=1; _gat_UA-1266565-1=1; form_key=eWqlHFY7h3GZnVEH; mage-banners-cache-storage={}; _uetsid=56de49302d0711efb368cfd12be71626; _uetvid=56de89a02d0711ef9c59efa4a463ed64; _mibhv=anon-1718669502020-2964792519_7119; form_key=eWqlHFY7h3GZnVEH; mage-cache-storage={}; mage-cache-storage-section-invalidation={}; mage-cache-sessid=true; private_content_version=need_version; recently_viewed_product={}; recently_viewed_product_previous={}; recently_compared_product={}; recently_compared_product_previous={}; product_data_storage={}; mage-messages=; section_data_ids={%22customer%22:1718669501%2C%22compare-products%22:1718669501%2C%22last-ordered-items%22:1718669501%2C%22cart%22:1718669502%2C%22directory-data%22:1718669501%2C%22captcha%22:1718669501%2C%22wishlist%22:1718669501%2C%22instant-purchase%22:1718669501%2C%22loggedAsCustomer%22:1718669501%2C%22multiplewishlist%22:1718669501%2C%22persistent%22:1718669501%2C%22review%22:1718669501%2C%22ammessages%22:1718669501%2C%22recently_viewed_product%22:1718669501%2C%22recently_compared_product%22:1718669501%2C%22product_data_storage%22:1718669501%2C%22paypal-billing-agreement%22:1718669501}; _ga=GA1.2.1617797142.1718668090; __zlcmid=1MKmnoTFcLTroFO; xdibx=N4Ig-mBGAeDGCuAnRIBcoAOGAuBnNAjAOwEAcAbOQJwCsADACxVUEA0IGAbrAHbaHtc-VMTKVajZmw6dcvfiPaIkAGzQgAFtmwZcqAPT6A7iYB0AWwCm2c.FyX450wHtEAc30h2K1ev0B-eBswXGckWEsAXnMAQwBLHlt7RwAyIPMwKwATOMdo6ySHJ1c3NODYGPMMeLceSOxnDB4YzgBaXGwY7DjYLxAVPEISCmp6JhYAX3YIGAxES040UCyYgE9hAG1REYlxmgBdKfAoaAXLPmFQACZGUipyJZBF9BBexRAFLeHxGjI6GgYh0EjzedHYnyBIBQL1B4LQG0hWRBaDBH3hkLeoDe0k-2x-VwIBAAzORDhMjjM4HEkagQDECEwYjEAGbkVpZGhE2CtBg0LKWVqQGhXLKtWAcgjM.l0ElEGKtPGjGV3OggCZAA; _ga_DWPJYPP88X=GS1.2.1718669502.1.1.1718669521.41.0.0; oscw_close_policy=IYIwxkA_; oscw_close_policy_ext=B4TwXkA_; _ga_BB83TXR9NF=GS1.1.1718669501.1.1.1718669525.36.0.0',
+  'priority': 'u=0, i',
+  'referer': 'https://store.metmuseum.org/?utm_source=mainmuseum&utm_medium=metmuseum.org&utm_campaign=topnav-static',
+  'sec-ch-ua': '"Google Chrome";v="125", "Chromium";v="125", "Not.A/Brand";v="24"',
+  'sec-ch-ua-mobile': '?0',
+  'sec-ch-ua-platform': '"Windows"',
+  'sec-fetch-dest': 'document',
+  'sec-fetch-mode': 'navigate',
+  'sec-fetch-site': 'same-origin',
+  'sec-fetch-user': '?1',
+  'upgrade-insecure-requests': '1',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
+}
+
+response = requests.request("GET", url, headers=headers, data=payload)
+
+print(response.text)
